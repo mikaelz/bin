@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" = "" ]
+then
+  echo "Usage: runs <process name>"
+  exit
+fi
+
+ps -ef | grep $1
