@@ -1,4 +1,13 @@
 #!/bin/bash
 # From http://www.hostip.info/use.html
 
-lynx -dump "http://api.hostip.info/get_html.php?ip=$1"
+# Example
+# bash$ ./iploc 217.145.199.40
+# Country: SLOVAKIA (SK)
+# City: Kolarovo
+# 
+# Latitude: 47.9167
+# Longitude: 18
+# IP: 217.145.199.40
+
+lynx -dump "http://api.hostip.info/get_html.php?position=true&ip=$1"
