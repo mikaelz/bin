@@ -1,0 +1,11 @@
+#!/bin/bash
+
+umount /Volumes/shellwebsupport &> /dev/null
+
+# create dir if it doesn't exists
+if [ ! -d "$DIRECTORY" ]; then
+    mkdir /Volumes/shellwebsupport
+fi
+
+# to check your uid use command `id`
+sshfs -C -o uid=501,ssh_command='ssh -i ~/.ssh/id_rsa',workaround=rename nevillegroup@shell.websupport.sk:. /Volumes/shellwebsupport
