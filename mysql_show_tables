@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# list all mysql database tables
+DBS=`mysql -uroot -e"show databases"`
+for b in $DBS ;
+do
+    mysql -uroot -e"show tables from $b"
+done
