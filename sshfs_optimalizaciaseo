@@ -1,0 +1,15 @@
+#!/bin/bash
+
+USERID="USERID"
+USER="optimalizaciaseo.sk"
+HOST="optimalizaciaseo.sk"
+MOUNT_DIR="/Volumes/optimalizaciaseo_sshfs"
+
+# create dir if it doesn't exists
+if [ ! -d "$MOUNT_DIR" ]; then
+    umount $MOUNT_DIR #&> /dev/null
+    mkdir $MOUNT_DIR
+fi
+
+# to check your uid use command `id`
+sshfs -C -o uid=$USERID,ssh_command='ssh -i ~/.ssh/id_rsa',workaround=rename $USER@$HOST:. $MOUNT_DIR
