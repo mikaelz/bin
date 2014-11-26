@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -r /var/log/httpd/access_log ]; then
+    multitail -x %f /var/log/httpd/access_log
+fi
+
+if [ -r /var/log/apache/access_log ]; then
+    multitail -x %f /var/log/apache/access_log
+fi
+
+if [ -r /var/log/apache2/access_log ]; then
+    multitail -x %f /var/log/apache2/access_log
+fi
