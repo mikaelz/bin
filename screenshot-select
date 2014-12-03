@@ -6,4 +6,4 @@ targetbase="$HOME/screenshot"
 mkdir -p $targetbase
 [ -d $targetbase ] || exit 1
 
-scrot -s -q 100 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshot;sxiv ~/screenshot/$f'
+scrot -s -q 100 'screenshot-%Y%m%d-%H%M_$wx$h.png' -e 'mv $f ~/screenshot;sxiv ~/screenshot/$f'
